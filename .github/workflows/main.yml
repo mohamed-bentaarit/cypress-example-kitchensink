@@ -15,3 +15,11 @@ jobs:
         with:
           build: npm run build
           start: npm start
+
+      - name: Upload test artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: cypress-test-artifacts
+          path: |
+            cypress/videos/**/*.mp4
+            cypress/screenshots/**/*.png
